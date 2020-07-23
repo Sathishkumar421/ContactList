@@ -21,13 +21,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         super(context, Util.DATABASE_NAME, null, Util.DATABASE_VERSION);
     }
 
-    //We create our table
+
     @Override
     public void onCreate(SQLiteDatabase db) {
-        //SQL - Structured Query Language
-        /*
-           create table _name(id, name, phone_number);
-         */
+
         String CREATE_TABLE = "CREATE TABLE " + Util.TABLE_NAME + "("
                 + Util.KEY_ID + " INTEGER PRIMARY KEY," + Util.KEY_NAME + " TEXT,"
                 + Util.KEY_PHONE_NUMBER + " TEXT" + ")";
@@ -40,17 +37,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         String DROP_TABLE = String.valueOf(R.string.db_drop1);
         db.execSQL(DROP_TABLE, new String[]{Util.DATABASE_NAME});
 
-        //Create a table again
         onCreate(db);
-
 
     }
 
-    /*
-       CRUD = Create, Read, Update, Delete
-
-     */
-    //Add Contact
+    //Create in CRUD
     public void addContact(contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -64,11 +55,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         Log.d("DBHandler", "addContact: " + "item added");
         db.close(); //closing db connection!
 
-
-
     }
 
-    //Get a contact
+    //Read in CRUD
     public contact getContact(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
