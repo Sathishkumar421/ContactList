@@ -2,4 +2,6 @@
     <string name="app_name">ContactList</string>
     <string name="db_drop">\"DROP TABLE IF ANY EXISTS\"</string>
     <string name="db_drop1">\"DROP TABLE IF EXISTS\"</string>
+    <string name="my_name">My Name</string>
+    <string name="_91_8248649840">+91 8248649840</string>
 </resources>
