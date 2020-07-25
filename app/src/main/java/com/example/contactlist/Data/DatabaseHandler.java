@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import com.example.contactlist.R;
-import com.example.contactlist.model.contact;
+import com.example.contactlist.model.Contact;
 import com.example.contactlist.Util;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Create in CRUD
-    public void addContact(contact contact) {
+    public void addContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -58,7 +58,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Read in CRUD
-    public contact getContact(int id) {
+    public Contact getContact(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(Util.TABLE_NAME,
@@ -69,7 +69,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
 
-        contact contact = new contact("James", "213986");
+        Contact contact = new Contact("James", "");
         contact.setId(Integer.parseInt(cursor.getString(0)));
         contact.setName(cursor.getString(1));
         contact.setPhoneNumber(cursor.getString(2));
@@ -78,8 +78,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Get all Contacts
-    public List<contact> getAllContacts() {
-        List<contact> contactList = new ArrayList<>();
+    public List<Contact> getAllContacts() {
+        List<Contact> contactList = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -90,7 +90,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         //Loop through our data
         if (cursor.moveToFirst()) {
             do {
-                contact contact = new contact("", "");
+                Contact contact = new Contact("","");
                 contact.setId(Integer.parseInt(cursor.getString(0)));
                 contact.setName(cursor.getString(1));
                 contact.setPhoneNumber(cursor.getString(2));
@@ -104,7 +104,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Update contact
-    public int updateContact(contact contact) {
+    public int updateContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -116,7 +116,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     //Delete single contact
-    public void deleteContact(contact contact) {
+    public void deleteContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.delete(Util.TABLE_NAME, Util.KEY_ID + "=?",

@@ -10,15 +10,15 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.contactlist.R;
-import com.example.contactlist.model.contact;
+import com.example.contactlist.model.Contact;
 
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
         private Context context;
-        private List<contact> ContactList;
+        private List<Contact> ContactList;
 
-    public RecyclerViewAdapter(Context context, List<contact> contactList) {
+    public RecyclerViewAdapter(Context context, List<Contact> contactList) {
         this.context = context;
         this.ContactList = contactList;
     }
@@ -34,7 +34,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         @Override
         public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-            contact contact= ContactList.get(position);
+            Contact contact= ContactList.get(position);
             holder.PhoneNumber.setText(contact.getPhoneNumber());
             holder.contactName.setText(contact.getName());
 

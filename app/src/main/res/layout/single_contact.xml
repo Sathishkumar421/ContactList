@@ -28,32 +28,34 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="260dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="173dp"
                 android:text="@string/my_name"
-                android:textAlignment="center"
-                android:textSize="24dp">
+                android:textAlignment="textStart"
+                android:textSize="18sp">
 
             </TextView>
 
             <TextView
                 android:id="@+id/Phone_Number"
-                android:layout_width="wrap_content"
-                android:layout_height="44dp"
+                android:layout_width="116dp"
+                android:layout_height="16dp"
                 android:layout_below="@+id/Name"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="260dp"
-                android:text="@string/_91_8248649840"
-                android:textAlignment="center"
-                android:textSize="20sp" />
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="90dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="28dp"
+                android:text="3544hhvjvjjkk"
+                android:textAlignment="inherit"
+                android:textSize="12sp" />
 
             <ImageView
                 android:layout_width="56dp"
                 android:layout_height="53dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="332dp"
                 android:layout_marginBottom="25dp"
                 android:background="@drawable/dp" />
         </RelativeLayout>
